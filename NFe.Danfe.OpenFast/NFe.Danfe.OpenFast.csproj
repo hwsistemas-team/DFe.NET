@@ -1,18 +1,39 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-	<PropertyGroup>
-		<TargetFrameworks>net462;netstandard2.0;net6.0</TargetFrameworks>
-		<DefineConstants>openfastreport</DefineConstants>
-		
-	</PropertyGroup>
+  <PropertyGroup>
+    <TargetFrameworks>net462;netstandard2.0;net8.0</TargetFrameworks>
+    <DefineConstants>openfastreport</DefineConstants>
+    <PackageId>Zeus.Net.NFe.NFCe.OpenFastReport</PackageId>
+    <Version>1.0.7</Version>
+    <Authors>hwsistemas</Authors>
+    <Company>hwsistemas</Company>
+  </PropertyGroup>
 
-	<ItemGroup>
-		<PackageReference Include="FastReport.OpenSource" Version="2022.2.2" />
-		<PackageReference Include="FastReport.OpenSource.Export.PdfSimple" Version="2022.2.2" />
-	</ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="FastReport.OpenSource" Version="2019.3.19" />
+    <PackageReference Include="FastReport.OpenSource.Export.PdfSimple" Version="2019.3.19" />
+  </ItemGroup>
 
-	<ItemGroup>
-		<ProjectReference Include="..\NFe.Danfe.Base\NFe.Danfe.Base.csproj" />
-	</ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NFe.Danfe.Base\NFe.Danfe.Base.csproj" PrivateAssets="all" />
+  </ItemGroup>
 
-	<Import Project="..\Shared.NFe.Danfe\Shared.NFe.Danfe.projitems" Label="Shared" />
+  <Import Project="..\Shared.NFe.Danfe\Shared.NFe.Danfe.projitems" Label="Shared" />
+
+  <ItemGroup>
+    <Content Include="..\NFe.Danfe.Base\bin\$(Configuration)\net462\NFe.Danfe.Base.dll">
+      <Pack>true</Pack>
+      <PackagePath>lib/net462/</PackagePath>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\NFe.Danfe.Base\bin\$(Configuration)\netstandard2.0\NFe.Danfe.Base.dll">
+      <Pack>true</Pack>
+      <PackagePath>lib/netstandard2.0/</PackagePath>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\NFe.Danfe.Base\bin\$(Configuration)\net8.0\NFe.Danfe.Base.dll">
+      <Pack>true</Pack>
+      <PackagePath>lib/net8.0/</PackagePath>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
 </Project>
